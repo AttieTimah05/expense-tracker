@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Expense Tracker (Mk)</title>
+</head>
+<body>
+    <h1>Expense Tracker (Mk)</h1>
+
+    <!-- Navigation between the two views -->
+    <nav class="tabs" aria-label="Main views">
+        <button id="tab-expenses" class="tab active" type="button">Expenses</button>
+        <button id="tab-summary" class="tab" type="button">Summary</button>
+    </nav>
+
+    <!-- VIEW 1: add + list expenses -->
+    <main id="view-expenses" class="view">
+        <div class="input-section">
+            <div class="field">
+                <label for="category-select">Category</label>
+                <select id="category-select">
+                    <option value="Food">Food</option>
+                    <option value="Transport fee">Transport fee</option>
+                    <option value="Rent">Rent</option>
+                    <option value="Clothes">Clothes</option>
+                    <option value="Shoes">Shoes</option>
+                    <option value="Utilities">Utilities</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="amount-input">Amount (Mk)</label>
+                <input type="number" id="amount-input" placeholder="e.g. 5000" min="1" step="any">
+            </div>
+            <div class="field">
+                <label for="date-input">Date</label>
+                <input type="date" id="date-input">
+            </div>
+            <button id="add-btn" type="button">Add expense</button>
+        </div>
+
+        <p id="message" class="message" role="status" aria-live="polite"></p>
+
+        <div class="expense-list-section">
+            <h2>Expense List</h2>
+            <p id="empty-state" class="empty">No expenses yet. Add your first one above.</p>
+            <table id="expense-table">
+                <thead>
+                    <tr>
+                        <th>Category</th>
+                        <th>Amount (Mk)</th>
+                        <th>Date</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody id="expense-table-body"></tbody>
+                <tfoot>
+                    <tr>
+                        <td>Total:</td>
+                        <td id="total-amount">0.00</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+    </main>
+
+    <!-- VIEW 2: summary by category -->
+    <section id="view-summary" class="view hidden">
+        <div class="expense-list-section">
+            <h2>Spending Summary</h2>
+            <div class="field summary-filter">
+                <label for="month-filter">Show month</label>
+                <select id="month-filter"></select>
+            </div>
+            <p id="summary-total" class="summary-total"></p>
+            <p id="summary-empty" class="empty">No expenses for this period.</p>
+            <div id="summary-bars"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
