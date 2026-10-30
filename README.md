@@ -5,7 +5,7 @@ A simple expense tracker for students and young adults in Malawi who want to see
 ## How to run
 1. Download or clone this repository.
 2. Open `index.html` in any modern browser (no server, install or database needed).
-   Or view it online: 'https://github.com/AttieTimah05/expense-tracker'
+   Or view it online: 'https://attietimah05.github.io/expense-tracker/'
 
 ## Features
 - **Expenses view:** add an expense (category, amount, date), see the running total, delete entries.
